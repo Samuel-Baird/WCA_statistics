@@ -50,6 +50,8 @@ def main():
                 target_results_list.append(lines[0:3])
             elif lines[1] == "sq1":
                 target_results_list.append(lines[0:3])
+            elif lines[1] == "333fm" or lines[1] == "333mbf":
+                pass
             else:
                 print("Error assigning PR singles", lines[0:3])
     
@@ -65,7 +67,7 @@ def main():
         for lines in all_results_list:
             
             #filters out target competitor, fmc and mbld
-            if lines[0] == target_competitor or lines[2] == "333fm" or lines[2] == "333mbf":
+            if lines[0] == target_competitor or lines[1] == "333fm" or lines[1] == "333mbf":
                 pass
             
             #filters out events on the target competitor list from the list of all competitors
@@ -75,7 +77,7 @@ def main():
                 if line[2] > lines[2]:
                     nemesized_in_an_event_list.append(lines[0:2])
                     
-                    print(lines[0:10])
+                    print(lines[0:2])
                     
                 else:
                     pass
